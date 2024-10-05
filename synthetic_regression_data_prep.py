@@ -1,6 +1,6 @@
 import random
 import torch
-from d2l import torch as d2l
+import d2l_torch as d2l
 
 class SyntheticRegressionData(d2l.DataModule):  #@save
     """Synthetic data for linear regression."""
@@ -48,6 +48,3 @@ def get_tensorloader(self, tensors, train, indices=slice(0, None)):
 def get_dataloader(self, train):
     i = slice(0, self.num_train) if train else slice(self.num_train, None)
     return self.get_tensorloader((self.X, self.y), train, i)
-
-X, y = next(iter(data.train_dataloader()))
-print('X shape:', X.shape, '\ny shape:', y.shape)
