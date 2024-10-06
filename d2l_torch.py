@@ -281,6 +281,7 @@ class Trainer(d2l.HyperParameters):
         for self.epoch in range(self.max_epochs):
             self.fit_epoch()
 
+    #self defined for different models
     def fit_epoch(self):
         raise NotImplementedError
 
